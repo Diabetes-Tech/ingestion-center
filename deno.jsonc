@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+     // required for Deno 1.40+ until SQLa/lib/notebook is upgraded to support TC39 decorators
+    "experimentalDecorators": true
+  },
+  "tasks": {
+    "doctor": "deno run -A ./support/bin/doctor.ts",
+    "audit": "deno run ./src/compliance-audit.tap.ts",
+    "ingestion-center-drh-test-e2e": "deno run -A ./src/ingestion-center-elt/drh/test-e2e.ts",
+    "ingestion-center-drh-doc": "deno doc --html --name=\"INGESTION CENTER DRH\" --output=./support/docs/lib/ingestion-center-elt/drh/ ./src/ingestion-center-elt/drh/mod.ts",
+    "prepare-release": "deno task ingestion-center-drh-doc",
+    "sqlpage": "DATABASE_URL=sqlite://./support/assurance/ingestion-center-elt/drh/results-test-e2e/resource.sqlite.db PORT=5050 sqlpage",
+    "ingestion-center-drh-test-serve": "deno task ingestion-center-drh-test-e2e && deno task sqlpage"
+  }
+}
