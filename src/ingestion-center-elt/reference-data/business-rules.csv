@@ -1,0 +1,13 @@
+Worksheet,Field,Required,Permissible Values,True Rejection ,Warning Layer,Resolved by QE/QCS
+Quality Assurance,All Files,Yes,Rows should be not be displaced. Data in each row should match column header. ,Yes,,
+Quality Assurance,All Files,Yes,"All correct column headers are present, even if field value is not required. Order of columns does not matter.",Yes,,
+Quality Assurance,All Files,Yes,"PAT_MRN_ID, FACILITY_ID matches for a screening episode across all three files.",Yes,,
+Screening,ENCOUNTER_ID,No,Is unique per encounter for each PAT_MRN_ID.,No,,Yes
+Admin_Demographic,MPI_ID,Yes,unique per patient.,No,,Yes
+Admin_Demographic,PAT_MRN_ID,Yes,Has a unique value per patient per facility. ,Yes,,
+Admin_Demographic,ADDRESS1,Required if Medicaid CIN not available,Is not a string of numbers,Threshold of completely blank address across all patients for the file or if Medicaid CIN is not available. ,Could be an issue if the patient has an address- provide feedback,
+Admin_Demographic,ADDRESS2,No,Is not a string of numbers,,Could be an issue if the patient has an address- provide feedback,
+Admin_Demographic,CITY,Yes,Is a city in New York State.,Threshold of completely empty state across all patients for the file.,Could be an issue if the patient has an address- provide feedback,
+Admin_Demographic,STATE,Yes,New York or NY,Threshold of completely empty city across all patients for the file.,,
+Admin_Demographic,ZIP,Yes,All numeric: 5 or 9 digits,Yes,,
+QE_Admin_Data,PAT_MRN_ID,Yes,Has a unique value per patient per facility. ,Yes,,

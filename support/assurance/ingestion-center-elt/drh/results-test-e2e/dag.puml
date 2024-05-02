@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+label dagprepareInit as "prepareInit"
+queue daginit as "init"
+label dagingest as "ingest"
+label dagensureContent as "ensureContent"
+label dagemitResources as "emitResources"
+label dagcheckRequiredTables as "checkRequiredTables"
+label dagcreateDerivedFromCte as "createDerivedFromCte"
+rectangle gprepareInit as "prepareInit"
+rectangle ginit as "init"
+rectangle gingest as "ingest"
+rectangle gensureContent as "ensureContent"
+rectangle gemitResources as "emitResources"
+rectangle gcheckRequiredTables as "checkRequiredTables"
+rectangle gcreateDerivedFromCte as "createDerivedFromCte"
+DAG --> dagprepareInit
+dagprepareInit --> daginit
+daginit --> dagingest
+dagingest --> dagensureContent
+dagensureContent --> dagemitResources
+dagemitResources --> dagcheckRequiredTables
+dagcheckRequiredTables --> dagcreateDerivedFromCte
+Graph --> gprepareInit
+gprepareInit --> ginit
+ginit --> gingest
+gingest --> gensureContent
+gensureContent --> gemitResources
+gemitResources --> gcheckRequiredTables
+gcheckRequiredTables --> gcreateDerivedFromCte
+@enduml
