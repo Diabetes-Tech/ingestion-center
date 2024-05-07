@@ -10,6 +10,7 @@
     "ingestion-center-drh-doc": "deno doc --html --name=\"INGESTION CENTER DRH\" --output=./support/docs/lib/ingestion-center-elt/drh/ ./src/ingestion-center-elt/drh/mod.ts",
     "prepare-release": "deno task ingestion-center-drh-doc",
     "sqlpage": "DATABASE_URL=sqlite://./support/assurance/ingestion-center-elt/drh/results-test-e2e/resource.sqlite.db PORT=5050 sqlpage",
-    "ingestion-center-drh-test-serve": "deno task ingestion-center-drh-test-e2e && deno task sqlpage"
+    "ingestion-center-drh-test-serve": "deno task ingestion-center-drh-test-e2e && deno task sqlpage",
+    "ingestion-center-drh-cgm-3nf-data-model": "deno run -A ./src/ingestion-center-elt/drh/drh-cgm-3nf-data-model.ts"
   }
 }

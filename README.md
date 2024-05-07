@@ -127,6 +127,12 @@ If the above works, and you installed SQLPage, you can start a webserver, too:
 $ deno task ingestion-center-drh-test-serve
 ```
 
+To create a 3NF data model of DRH CGM:
+
+```bash
+$ deno task ingestion-center-drh-cgm-3nf-data-model
+```
+
 ## Build (Development) Dependencies
 
 During build (development) in a sandbox you will need all the runtime
